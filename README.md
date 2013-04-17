@@ -1,5 +1,5 @@
-plugin-Automated-Content-Import-Export
-======================================
+plugin-wysiwyg-editor-customizer
+=================================
 
 This plugin allows yout to get what you want to see on your WYSIWYG editor and give it your own look and feel. 
 This plugin allows you to customize some of the default properties of the WYSIWYG editor and define your own css 
