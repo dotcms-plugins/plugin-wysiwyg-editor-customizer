@@ -10,19 +10,20 @@ Configuration:
 
 The file conf/plugin.properties allows you to override the default values for these parameters:
 
-reload.force: indicates whether the configuration properties are loaded just once
-WYSIWYG_CSS: path of the css file
-WYSIWYG_THEME: choose between advance or simple
-WYSIWYG_PLUGINS: list of the plugins enabled for the editor
-WYSIWYG_BLOCKFORMATS: list of block formats available from the editor
-WYSIWYG_PASTEUSEDIALOG: enables or disables the dialog box that pops up when pasting content to the editor
-WYSIWYG_DATEFORMAT: date format used by the editor
-WYSIWYG__TIMEFORMAT: time format used by the editor
-WYSIWYG_WIDTH: width of the editor area
-WYSIWYG_NUMBER_THEME_BUTTON: number of rows where buttons can be arranged
-WYSIWYG_THEME_BUTTON1: buttons to appear on row #1
-WYSIWYG_THEME_BUTTON2: buttons to appear on row #2
-WYSIWYG_THEME_BUTTON3: buttons to appear on row #3
+1) reload.force: indicates whether the configuration properties are loaded just once
+2) WYSIWYG_CSS: path of the css file
+3) WYSIWYG_THEME: choose between advance or simple
+4) WYSIWYG_PLUGINS: list of the plugins enabled for the editor
+5) WYSIWYG_BLOCKFORMATS: list of block formats available from the editor
+6) WYSIWYG_PASTEUSEDIALOG: enables or disables the dialog box that pops up when pasting content to the editor
+7) WYSIWYG_DATEFORMAT: date format used by the editor
+8) WYSIWYG__TIMEFORMAT: time format used by the editor
+9) WYSIWYG_WIDTH: width of the editor area
+10) WYSIWYG_NUMBER_THEME_BUTTON: number of rows where buttons can be arranged
+11) WYSIWYG_THEME_BUTTON1: buttons to appear on row #1
+12) WYSIWYG_THEME_BUTTON2: buttons to appear on row #2
+13) WYSIWYG_THEME_BUTTON3: buttons to appear on row #3
+14) WYSIWYG_THEME_BUTTON4: buttons to appear on row #4
 
 Usage: 
 =======
