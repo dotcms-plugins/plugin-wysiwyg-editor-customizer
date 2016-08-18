@@ -14,7 +14,7 @@ The file conf/plugin.properties allows you to override the default values for th
 
 2) WYSIWYG_CSS: path of the css file.
 
-3) WYSIWYG_THEME: choose between advance or simple.
+3) WYSIWYG_THEME: Only Modern Theme is available for TinyMCE 4. Basic and Advanced themes are no longer supported.
 
 4) WYSIWYG_PLUGINS: list of the plugins enabled for the editor.
 
