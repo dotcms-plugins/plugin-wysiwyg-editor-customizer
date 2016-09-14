@@ -148,7 +148,7 @@ var tinyMCEProps = {
             valid_elements : "*[*]",
             relative_urls : true,
             document_base_url : "/",
-                        <% /*Set the WYSIWYG DATE FORMATS*/
+               <% /*Set the WYSIWYG DATE FORMATS*/
                String dateformat =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_DATEFORMAT");
                if(UtilMethods.isSet(dateformat)){
                %>
@@ -159,8 +159,8 @@ var tinyMCEProps = {
                <%="plugin_insertdate_dateFormat : \"%Y-%m-%d\","%>
                <%
                }
-            %>
-            <% /*Set the WYSIWYG TIME FORMATS*/
+              %>
+              <% /*Set the WYSIWYG TIME FORMATS*/
                String timeformats =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_TIMEFORMAT");
                if(UtilMethods.isSet(timeformats)){
                %>
@@ -172,7 +172,7 @@ var tinyMCEProps = {
                <%
                }
             %>
-            <% /*Set the WYSIWYG TIME FORMATS*/
+            <% /*Set the Paste Use Dialog*/
                String pasteusedialog =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_PASTEUSEDIALOG");
                if(UtilMethods.isSet(pasteusedialog)){
                %>
@@ -184,6 +184,18 @@ var tinyMCEProps = {
                <%
                }
             %>
+            <% /*Set the WYSIWYG BLOCK FORMATS*/
+              String blockformats =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_BLOCKFORMATS");
+              if(UtilMethods.isSet(blockformats)){
+              %>
+                <%="theme_advanced_blockformats : \""+blockformats+"\","%>
+              <%
+              }else{
+              %>
+                <%="theme_advanced_blockformats : \"p,div,h1,h2,h3,h4,h5,h6,blockquote,dt,dd,code,samp,pre\","%>
+              <%
+              }
+              %>
             gecko_spellcheck : true,
             image_advtab: true,
             file_browser_callback: cmsFileBrowser,
