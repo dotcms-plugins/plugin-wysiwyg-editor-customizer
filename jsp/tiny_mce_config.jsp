@@ -188,11 +188,11 @@ var tinyMCEProps = {
               String blockformats =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_BLOCKFORMATS");
               if(UtilMethods.isSet(blockformats)){
               %>
-                <%="theme_advanced_blockformats : \""+blockformats+"\","%>
+                <%="block_formats : \""+blockformats+"\","%>
               <%
               }else{
               %>
-                <%="theme_advanced_blockformats : \"p,div,h1,h2,h3,h4,h5,h6,blockquote,dt,dd,code,samp,pre\","%>
+                <%="block_formats : \"Paragraph=p;Header 1=h1;Header 2=h2;Header 3=h3\","%>
               <%
               }
               %>
