@@ -77,7 +77,7 @@ var tinyMCEProps = {
                <%
                }else{
                %>
-               <%="theme : \"advanced\","%>
+               <%="theme : \"modern\","%>
                <%
                }
             %>
@@ -89,7 +89,7 @@ var tinyMCEProps = {
                String plugins2 =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_PLUGINS2");
                if (UtilMethods.isSet(plugins1) && UtilMethods.isSet(plugins2)) { %>
                <%="plugins : \""+plugins1 + "," + plugins2 + "\","%>
-               <% } else { %>
+               <% } else if(UtilMethods.isSet(plugins1)){ %>
                <%="plugins : \""+plugins1 + "\","%>
                <% } %>
              <%/*Set the WYSIWYG ADVANCED BUTTONS*/
