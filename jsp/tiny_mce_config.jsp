@@ -33,10 +33,11 @@ Make sure your plugin has no - character in its name. Use _ instead.
 
 --%>
 
-<%@page import="com.dotmarketing.portlets.files.model.File"%>
+<%@page import="com.dotmarketing.portlets.contentlet.model.Contentlet"%>
+<%@page import="com.dotmarketing.portlets.fileassets.business.FileAsset"%>
 <%@page import="com.dotmarketing.beans.Host"%>
 <%@page import="com.dotmarketing.beans.Identifier"%>
-<%@page import="com.dotmarketing.portlets.files.business.FileFactoryImpl"%>
+
 <%@page import="com.dotmarketing.util.Config"%>
 <%@page import="com.dotmarketing.business.APILocator"%>
 <%@page import="com.dotmarketing.util.UtilMethods"%>
@@ -68,8 +69,8 @@ var tinyMCEProps = {
                 if(roleApi.doesUserHaveRole(currentUser, roleApi.loadRoleByKey(roleKey))) {
                     theme = "simple";
                         }
-        }
-    }
+			        }
+			    }
                
                %>
                <%="theme : \""+theme+"\","%>
@@ -86,8 +87,7 @@ var tinyMCEProps = {
                         <% /*Set the PLUGINS THEME*/
                String plugins1 =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_PLUGINS1");
                String plugins2 =APILocator.getPluginAPI().loadProperty("org.dotcms.tinymce_extended", "WYSIWYG_PLUGINS2");
-               if (UtilMethods.isSet(plugins1) && UtilMethods.isSet(plugins2)) {
-               %>
+               if (UtilMethods.isSet(plugins1) && UtilMethods.isSet(plugins2)) { %>
                <%="plugins : \""+plugins1 + "," + plugins2 + "\","%>
                <% } else { %>
                <%="plugins : \""+plugins1 + "\","%>
@@ -112,9 +112,7 @@ var tinyMCEProps = {
                  <%
                }          
             %>
-            spellchecker_language : "en_US",
-            spellchecker_languages : "English=en_US,Español=es_ES",
-            spellchecker_rpc_url : "/servlets/jmyspell-spellchecker",
+
             paste_auto_cleanup_on_paste : true,
             paste_strip_class_attributes : "all",
             convert_urls : true,
@@ -132,11 +130,8 @@ var tinyMCEProps = {
            }catch(Exception e){                
            }
             //cssPath = cssPath.replaceAll(Config.getStringProperty("VIRTUAL_FILE_PREFIX"), "");
-            File file = null;
-               try {
-                   file = APILocator.getFileAPI().getFileByURI(cssPath,host,true, APILocator.getUserAPI().getSystemUser(), true);
-               }catch(Exception e){                
-               }
+            FileAsset file = null;
+
                     
             if(UtilMethods.isSet(file)){%>
             <%="content_css : \"" + cssPath+"?"+new java.util.Date().getTime() + "\","%>    
