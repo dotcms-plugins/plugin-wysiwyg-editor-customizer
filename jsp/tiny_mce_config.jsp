@@ -32,23 +32,18 @@ tinymce.PluginManager.add('plugin_hello.world_myplugin', tinymce.plugins.TinyMCE
 Make sure your plugin has no - character in its name. Use _ instead.
 
 --%>
-
-<%@page import="com.dotmarketing.portlets.contentlet.model.Contentlet"%>
-<%@page import="com.dotmarketing.portlets.fileassets.business.FileAsset"%>
 <%@page import="com.dotmarketing.beans.Host"%>
 <%@page import="com.dotmarketing.beans.Identifier"%>
-
 <%@page import="com.dotmarketing.util.Config"%>
 <%@page import="com.dotmarketing.business.APILocator"%>
 <%@page import="com.dotmarketing.util.UtilMethods"%>
+<%@page import="com.dotmarketing.business.IdentifierAPI"%>
 <%@page import="com.dotmarketing.business.web.WebAPILocator"%>
-<%@page import="com.dotmarketing.util.InodeUtils"%>
 <%@page import="com.dotmarketing.business.web.UserWebAPI"%>
 <%@page import="com.dotmarketing.business.RoleAPI"%>
 <%@page import="com.dotmarketing.business.Role"%>
 <%@page import="com.liferay.portal.model.User"%>
 <%@page import="java.util.List"%>
-
 
 var tinyMCEProps = {
             
@@ -130,11 +125,10 @@ var tinyMCEProps = {
            }catch(Exception e){                
            }
             //cssPath = cssPath.replaceAll(Config.getStringProperty("VIRTUAL_FILE_PREFIX"), "");
-            FileAsset file = null;
-
+            Identifier ident = APILocator.getIdentifierAPI().find(host,cssPath);
                     
-            if(UtilMethods.isSet(file)){%>
-            <%="content_css : \"" + cssPath+"?"+new java.util.Date().getTime() + "\","%>    
+            if(UtilMethods.isSet(ident.getURI())){%>
+            <%="content_css : \"" + ident.getURI()+"?"+new java.util.Date().getTime() + "\","%>    
             <%}else{%>
             <%="content_css : \"/global/css/base.css?"+new java.util.Date().getTime() + "\","%>
             <%}%>                                                
