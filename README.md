@@ -1,5 +1,7 @@
 # This plugin deprecated - please use field variables to control the WYSIWYG 
 
+See: https://dotcms.com/docs/latest/the-wysiwyg-field#FieldVariable
+
 Wysiwyg Editor Customizer
 =================================
 
