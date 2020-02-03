@@ -1,3 +1,5 @@
+# This plugin deprecated - please use field variables to control the WYSIWYG 
+
 Wysiwyg Editor Customizer
 =================================
 
